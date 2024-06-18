@@ -1,0 +1,98 @@
+output_dir: 'output'
+project_name: 'seq_224_tarFlo'
+# set pretrained as a file path or an url
+pretrained: 'model_base_capfilt_large.pth'
+
+model_ver: 3
+early_stopping: 10
+# size of vit model; base or large
+arch: 'vit' #res18, vit, segformer
+vit: 'base'
+vit_grad_ckpt: False
+vit_ckpt_layer: 0
+batch_size: 8
+batch_size_test: 1
+print_freq: 0
+
+freeze_lm: True
+freeze_visual: False
+eval_clip: False
+freeze_lm_layer: 'all'
+add_loc_token: True
+try_clipseg: False
+# vit: 'large'
+# vit_grad_ckpt: True
+# vit_ckpt_layer: 5
+# batch_size: 16
+# init_lr: 2e-6
+max_floors: 1
+max_floors_test: 1
+image_size: 224
+image_h: 224
+image_w: 224
+map_h: 700
+map_w: 1200
+loc_token_id: 30523
+dialog_history: False
+dialog_cliping: False
+# generation configs
+max_length: 20  
+min_length: 5
+num_beams: 3
+prompt: 'a map of '
+dropout_rate: 0.1
+dropout_unet: 0.1
+
+# optimizer
+weight_decay: 0.05
+init_lr: 2e-5
+min_lr: 0
+max_epoch: 30
+grad_accumulation_steps: 1
+multi_depth: 3
+
+# image decoder
+heat_decoder: 'unet' #unet
+bert_mode: 'text'
+light_aug: False
+use_cls: False
+
+debug: False
+dry_run: False
+per_image_softmax: True
+use_min_max: False 
+
+reuse_hidden: False
+use_prev_est: False
+fusion_prev_est: 'multiply' ## concat, multiply, none
+
+# loss config
+# blur paras
+k_min: 3
+k_max: 15
+s_min: 10
+s_max: 50
+use_soft: False
+map_recon: False
+map_loss_w: 0.1
+
+discount: 0.0
+loss_w: 1.0
+
+per_pixel_sigmoid: True
+new_bimap: False
+aux_discount: 0.0
+aux_loss_w: 0.0 
+
+loss_reduce: 'batch' # batch, turn, mean
+loss_reduce_aux: 'mean' # batch, turn, mean
+loss_gain: False
+gain_loss_w: 0.1
+# intermediate evaluations
+inter_le: False
+# gpt dialog
+use_gpt_dialog: False
+gpt_diag_dir: 'gpt_data'
+# use fake gt
+teacher_path: ''
+to_paper: False
