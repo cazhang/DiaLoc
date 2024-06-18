@@ -4,7 +4,7 @@ This is the offical repository for the iterative dialog localization work descri
 https://arxiv.org/abs/2403.06846
 
 <p align="center">
-  <img width="627" height="242" src="./src/dialoc_figure.jpg" alt="DiaLoc figure">
+  <img width="622" height="590" src="./src/dialoc_figure.jpg" alt="DiaLoc figure">
 </p>
 
 
