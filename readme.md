@@ -13,17 +13,21 @@ https://arxiv.org/abs/2403.06846
 The dataset WAY could be found following the project:
 https://github.com/meera1hahn/Graph_LED
 
+# Setup
+```
+pip install -r requirements.txt
+```
 # Training Models
 
 ## One-shot Version
 
-'''
+```
 bash run_LED.sh
-'''
+```
 Please modify the path to point to WAY data folder. 
 
 ## Multi-shot Version
 
-'''
+```
 bash run_SEQ.sh
-'''
+```
